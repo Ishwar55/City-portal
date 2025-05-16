@@ -15,19 +15,20 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3mi5)oev_wnkgp@=vtm2)j#5+ynuya3bfw^xk1z*3nd*mwtmgf'
+SECRET_KEY = os.environ.get('django-insecure-3mi5)oev_wnkgp@=vtm2)j#5+ynuya3bfw^xk1z*3nd*mwtmgf', 'fallback-secret')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['city-portal1.onrender.com']
+
+
+
 
 
 
